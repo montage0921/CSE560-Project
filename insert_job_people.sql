@@ -1,0 +1,22 @@
+INSERT INTO Job_People (tconst, nconst, job)
+VALUES
+('tt000001', 'nm000001', 'Director1'),
+('tt000002', 'nm000002', 'Writer1'),
+('tt000003', 'nm000003', 'Producer1'),
+('tt000004', 'nm000004', 'Actor1'),
+('tt000005', 'nm000005', 'Cinematographer1'),
+('tt000006', 'nm000006', 'Editor1'),
+('tt000007', 'nm000007', 'Director2'),
+('tt000008', 'nm000008', 'Writer2'),
+('tt000009', 'nm000009', 'Producer2'),
+('tt000010', 'nm000010', 'Actor2'),
+('tt000011', 'nm000011', 'Actor3'),
+('tt000012', 'nm000012', 'Editor2'),
+('tt000013', 'nm000013', 'ProductionMgr1'),
+('tt000014', 'nm000014', 'SoundDesigner1'),
+('tt000015', 'nm000015', 'Composer1'),
+('tt000016', 'nm000016', 'ArtDirector1'),
+('tt000017', 'nm000017', 'CostumeDesigner1'),
+('tt000018', 'nm000018', 'VFXSupervisor1'),
+('tt000019', 'nm000019', 'CastingDirector1'),
+('tt000020', 'nm000020', 'StuntCoordinator1');

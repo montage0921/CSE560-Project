@@ -1,0 +1,22 @@
+INSERT INTO People (nconst, primaryName, birthYear, deathYear)
+VALUES
+('nm000001', 'Person 1',  1970, NULL),
+('nm000002', 'Person 2',  1980, NULL),
+('nm000003', 'Person 3',  1990, NULL),
+('nm000004', 'Person 4',  1975, NULL),
+('nm000005', 'Person 5',  1965, NULL),
+('nm000006', 'Person 6',  2000, NULL),
+('nm000007', 'Person 7',  1985, NULL),
+('nm000008', 'Person 8',  1972, NULL),
+('nm000009', 'Person 9',  1995, NULL),
+('nm000010', 'Person 10', 1988, NULL),
+('nm000011', 'Person 11', 1977, NULL),
+('nm000012', 'Person 12', 1960, NULL),
+('nm000013', 'Person 13', 1955, NULL),
+('nm000014', 'Person 14', 1999, NULL),
+('nm000015', 'Person 15', 1944, NULL),
+('nm000016', 'Person 16', 1991, NULL),
+('nm000017', 'Person 17', 1976, NULL),
+('nm000018', 'Person 18', 1983, NULL),
+('nm000019', 'Person 19', 1982, NULL),
+('nm000020', 'Person 20', 1979, NULL);

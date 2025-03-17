@@ -1,0 +1,22 @@
+INSERT INTO Profession (profession_name)
+VALUES
+('Director'),
+('Writer'),
+('Producer'),
+('Actor'),
+('Editor'),
+('Composer'),
+('Cinematographer'),
+('Production Manager'),
+('Sound Designer'),
+('VFX Supervisor'),
+('Casting Director'),
+('Stunt Coordinator'),
+('Art Director'),
+('Costume Designer'),
+('Makeup Artist'),
+('Animator'),
+('Executive Producer'),
+('Assistant Director'),
+('Location Manager'),
+('Boom Operator');

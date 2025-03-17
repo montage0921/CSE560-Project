@@ -1,0 +1,22 @@
+INSERT INTO Episode_Details (tconst, primaryTitle, originalTitle, startYear, runtimeMinutes)
+VALUES
+(1,  'Episode Title 1',  'Episode Original 1',   2010,  45),
+(2,  'Episode Title 2',  'Episode Original 2',   2010,  45),
+(3,  'Episode Title 3',  'Episode Original 3',   2010,  45),
+(4,  'Episode Title 4',  'Episode Original 4',   2011,  46),
+(5,  'Episode Title 5',  'Episode Original 5',   2011,  46),
+(6,  'Episode Title 6',  'Episode Original 6',   2012,  47),
+(7,  'Episode Title 7',  'Episode Original 7',   2012,  47),
+(8,  'Episode Title 8',  'Episode Original 8',   2013,  48),
+(9,  'Episode Title 9',  'Episode Original 9',   2013,  48),
+(10, 'Episode Title 10', 'Episode Original 10',  2014,  50),
+(11, 'Episode Title 11', 'Episode Original 11',  2014,  50),
+(12, 'Episode Title 12', 'Episode Original 12',  2014,  50),
+(13, 'Episode Title 13', 'Episode Original 13',  2015,  42),
+(14, 'Episode Title 14', 'Episode Original 14',  2015,  42),
+(15, 'Episode Title 15', 'Episode Original 15',  2016,  42),
+(16, 'Episode Title 16', 'Episode Original 16',  2016,  42),
+(17, 'Episode Title 17', 'Episode Original 17',  2016,  42),
+(18, 'Episode Title 18', 'Episode Original 18',  2017,  42),
+(19, 'Episode Title 19', 'Episode Original 19',  2017,  44),
+(20, 'Episode Title 20', 'Episode Original 20',  2018,  45);

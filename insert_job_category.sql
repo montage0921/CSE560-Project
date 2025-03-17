@@ -1,0 +1,22 @@
+INSERT INTO Job_Category (category, job)
+VALUES
+('Directing',  'Director1'),
+('Writing',    'Writer1'),
+('Producing',  'Producer1'),
+('Acting',     'Actor1'),
+('Cinematography', 'Cinematographer1'),
+('Editing',    'Editor1'),
+('Directing',  'Director2'),
+('Writing',    'Writer2'),
+('Producing',  'Producer2'),
+('Acting',     'Actor2'),
+('Acting',     'Actor3'),
+('Editing',    'Editor2'),
+('Production', 'ProductionMgr1'),
+('Sound',      'SoundDesigner1'),
+('Music',      'Composer1'),
+('Art',        'ArtDirector1'),
+('Costume',    'CostumeDesigner1'),
+('VisualFX',   'VFXSupervisor1'),
+('Casting',    'CastingDirector1'),
+('Stunts',     'StuntCoordinator1');
