@@ -1,4 +1,3 @@
-
 INSERT INTO TV_Movie (tconst, titleType, primaryTitle, originalTitle, isAdult, startYear, endYear, runtimeMinutes)
 VALUES
 ('tt000001', 'movie',       'Primary Title 1',  'Original Title 1',  false, 2001,  NULL, 120),
@@ -23,7 +22,7 @@ VALUES
 ('tt000020', 'tvPilot',     'Primary Title 20', 'Original Title 20', false, 2020,  NULL,  65);
 
 
-INSERT INTO Title_Aliases (titleId, "ordering", title, region, "language", isOriinalTitle)
+INSERT INTO Title_Aliases (titleId, "ordering", title, region, "language", isOriginalTitle)
 VALUES
 ('tt000001', 1, 'Alt Title 1', 'US', 'en', true),
 ('tt000002', 1, 'Alt Title 2', 'US', 'en', true),
@@ -287,7 +286,7 @@ VALUES
 (20, 'nm000020');
 
 
-INSERT INTO Cast (tconst, nconst)
+INSERT INTO "Cast" (tconst, nconst)
 VALUES
 ('tt000001', 'nm000004'),
 ('tt000002', 'nm000004'),
