@@ -2,8 +2,8 @@
 CREATE TABLE TV_Movie(
 	tconst VARCHAR(20) PRIMARY KEY NOT NULL,
 	titleType VARCHAR(50) CHECK (titleType IN ('movie', 'short', 'tvMovie', 'tvSeries', 'tvMiniSeries', 'tvSpecial', 'video', 'videoGame','tvPilot','tvShort')), 
-	primaryTitle VARCHAR(200) NOT NULL,
-	originalTitle VARCHAR(200),
+	primaryTitle VARCHAR(1000) NOT NULL,
+	originalTitle VARCHAR(1000),
 	isAdult BOOLEAN DEFAULT False,
 	startYear INT,
 	endYear INT,
@@ -14,9 +14,9 @@ CREATE TABLE TV_Movie(
 CREATE TABLE Title_Aliases(
 	titleId VARCHAR(20) NOT NULL,
 	"ordering" INT NOT NULL,
-	title VARCHAR(200) NOT NULL,
-	region VARCHAR(20),
-	"language" VARCHAR(20),
+	title VARCHAR(1000) NOT NULL,
+	region VARCHAR(200),
+	"language" VARCHAR(200),
 	isOriginalTitle BOOLEAN NOT NULL,
 	PRIMARY KEY(titleId,"ordering"),
 	FOREIGN KEY (titleId) REFERENCES TV_Movie(tconst) ON DELETE CASCADE
@@ -25,7 +25,7 @@ CREATE TABLE Title_Aliases(
 -- Create TABLE: Genres
 CREATE TABLE Genres (
     genreID SERIAL PRIMARY KEY,
-    genre VARCHAR(20) NOT NULL UNIQUE
+    genre VARCHAR(100) NOT NULL UNIQUE
 );
 
 -- Create TABLE: genres_movie (Join TABLE for TV_Movie and Genres)
@@ -49,8 +49,8 @@ CREATE TABLE Episode (
 -- Create TABLE: Episode Details
 CREATE TABLE Episode_Details (
     tconst VARCHAR(20) PRIMARY KEY,
-    primaryTitle VARCHAR(200) NOT NULL,
-    originalTitle VARCHAR(200),
+    primaryTitle VARCHAR(1000) NOT NULL,
+    originalTitle VARCHAR(1000),
     startYear INT,
     runtimeMinutes INT,
     FOREIGN KEY (tconst) REFERENCES Episode(tconst) ON DELETE CASCADE
@@ -67,22 +67,22 @@ CREATE TABLE Ratings (
 -- Create TABLE: People
 CREATE TABLE People (
     nconst VARCHAR(20) PRIMARY KEY,
-    primaryName VARCHAR(200) NOT NULL,
+    primaryName VARCHAR(1000) NOT NULL,
     birthYear INT,
     deathYear INT
 );
 
 -- Create TABLE: Job Category
 CREATE TABLE Job_Category (
-    category VARCHAR(50) NOT NULL,
-    job VARCHAR(50) NOT NULL PRIMARY KEY
+    category VARCHAR(200) NOT NULL,
+    job VARCHAR(200) NOT NULL PRIMARY KEY
 );
 
 -- Create TABLE: Job People (Relationship between TV_Movie and People via Jobs)
 CREATE TABLE Job_People (
     tconst VARCHAR(20) NOT NULL,
     nconst VARCHAR(20) NOT NULL,
-    job VARCHAR(50) NOT NULL,
+    job VARCHAR(200) NOT NULL,
     PRIMARY KEY (tconst, nconst,job),
     FOREIGN KEY (tconst) REFERENCES TV_Movie(tconst) ON DELETE CASCADE,
     FOREIGN KEY (nconst) REFERENCES People(nconst) ON DELETE CASCADE,
@@ -92,7 +92,7 @@ CREATE TABLE Job_People (
 -- Create TABLE: Profession
 CREATE TABLE Profession (
     profession_id SERIAL PRIMARY KEY,
-    profession_name VARCHAR(50) NOT NULL UNIQUE
+    profession_name VARCHAR(200) NOT NULL UNIQUE
 );
 
 -- Create TABLE: Profession People (Linking People with Professions)
