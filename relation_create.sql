@@ -11,7 +11,7 @@ CREATE TABLE TV_Movie(
 );
 
 -- Create TABLE: Title Aliases
-create TABLE Title_Aliases(
+CREATE TABLE Title_Aliases(
 	titleId VARCHAR(20) NOT NULL,
 	"ordering" INT NOT NULL,
 	title VARCHAR(200) NOT NULL,
@@ -121,5 +121,6 @@ CREATE TABLE Famous_Work (
     FOREIGN KEY (tconst) REFERENCES TV_Movie(tconst) ON DELETE CASCADE,
     FOREIGN KEY (nconst) REFERENCES People(nconst) ON DELETE CASCADE
 );
+
 
 
