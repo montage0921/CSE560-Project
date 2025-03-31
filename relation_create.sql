@@ -108,7 +108,8 @@ CREATE TABLE Profession_People (
 CREATE TABLE "Cast" (
     tconst VARCHAR(20) NOT NULL,
     nconst VARCHAR(20) NOT NULL,
-    PRIMARY KEY (tconst, nconst),
+    "character" VARCHAR(200),
+    PRIMARY KEY (tconst, nconst,"character"),
     FOREIGN KEY (tconst) REFERENCES TV_Movie(tconst) ON DELETE CASCADE,
     FOREIGN KEY (nconst) REFERENCES People(nconst) ON DELETE CASCADE
 );
