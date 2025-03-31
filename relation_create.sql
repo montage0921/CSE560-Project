@@ -73,21 +73,35 @@ CREATE TABLE People (
 );
 
 -- Create TABLE: Job Category
-CREATE TABLE Job_Category (
-    category VARCHAR(200) NOT NULL,
-    job VARCHAR(200) NOT NULL PRIMARY KEY
-);
+
+-- CREATE TABLE Job_Category (
+--     category VARCHAR(200) NOT NULL,
+--     job VARCHAR(200) NOT NULL,
+--     PRIMARY KEY(job)
+-- );
+
+-- -- Create TABLE: Job People (Relationship between TV_Movie and People via Jobs)
+-- CREATE TABLE Job_People (
+--     tconst VARCHAR(20) NOT NULL,
+--     nconst VARCHAR(20) NOT NULL,
+--     job VARCHAR(1000) NOT NULL,
+--     PRIMARY KEY (tconst, nconst,job),
+--     FOREIGN KEY (tconst) REFERENCES TV_Movie(tconst) ON DELETE CASCADE,
+--     FOREIGN KEY (nconst) REFERENCES People(nconst) ON DELETE CASCADE,
+--     FOREIGN KEY (job) REFERENCES Job_Category(job) ON DELETE CASCADE
+-- );
 
 -- Create TABLE: Job People (Relationship between TV_Movie and People via Jobs)
-CREATE TABLE Job_People (
+CREATE TABLE crew (
     tconst VARCHAR(20) NOT NULL,
     nconst VARCHAR(20) NOT NULL,
-    job VARCHAR(200) NOT NULL,
-    PRIMARY KEY (tconst, nconst,job),
+    job VARCHAR(1000) NOT NULL,
+    category VARCHAR(1000) NOT NULL,
+    PRIMARY KEY (tconst, nconst,job,category),
     FOREIGN KEY (tconst) REFERENCES TV_Movie(tconst) ON DELETE CASCADE,
     FOREIGN KEY (nconst) REFERENCES People(nconst) ON DELETE CASCADE,
-    FOREIGN KEY (job) REFERENCES Job_Category(job) ON DELETE CASCADE
 );
+
 
 -- Create TABLE: Profession
 CREATE TABLE Profession (
