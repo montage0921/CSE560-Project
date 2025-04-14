@@ -75,3 +75,24 @@ $$ LANGUAGE plpgsql;
 
 -- Function to find actors/actress by genere 
 
+
+
+-- Insert Ratings
+CREATE FUNCTION insert_ratings(tt VARCHAR(20), averageRatings FLOAT, numVotes INT, title VARCHAR(1000))
+RETURNS VOID AS $$
+DECLARE movie_title VARCHAR(1000);
+begin
+	select primaryTitle into movie_title from tv_movie where tconst = tt;
+	
+	if movie_title is null then
+		insert into tv_movie(tconst, primaryTitle)
+		values (tt, title);
+	END IF;
+		
+	insert into ratings 
+	values (tt, averageRatings, numVotes);
+	
+end;
+$$ language plpgsql;
+
+
