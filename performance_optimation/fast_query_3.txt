@@ -1,0 +1,29 @@
+QUERY PLAN                                                                                                                                                   |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+Nested Loop  (cost=1.83..1401.83 rows=1 width=33) (actual time=0.066..0.067 rows=0 loops=1)                                                                  |
+  Buffers: shared hit=2 read=3                                                                                                                               |
+  ->  Nested Loop  (cost=1.42..1401.39 rows=1 width=24) (actual time=0.066..0.066 rows=0 loops=1)                                                            |
+        Join Filter: ((p2.nconst)::text = (c.nconst)::text)                                                                                                  |
+        Buffers: shared hit=2 read=3                                                                                                                         |
+        ->  Nested Loop  (cost=1.00..6.57 rows=1 width=34) (actual time=0.065..0.066 rows=0 loops=1)                                                         |
+              Buffers: shared hit=2 read=3                                                                                                                   |
+              ->  Index Scan using profession_profession_name_key on profession p  (cost=0.14..2.36 rows=1 width=4) (actual time=0.011..0.011 rows=1 loops=1)|
+                    Index Cond: ((profession_name)::text = 'director'::text)                                                                                 |
+                    Buffers: shared hit=2                                                                                                                    |
+              ->  Nested Loop  (cost=0.85..4.20 rows=1 width=38) (actual time=0.052..0.052 rows=0 loops=1)                                                   |
+                    Buffers: shared read=3                                                                                                                   |
+                    ->  Index Scan using idx_name on people p2  (cost=0.42..2.64 rows=1 width=24) (actual time=0.052..0.052 rows=0 loops=1)                  |
+                          Index Cond: ((primaryname)::text = 'Jiabao'::text)                                                                                 |
+                          Buffers: shared read=3                                                                                                             |
+                    ->  Index Only Scan using profession_people_pkey on profession_people pp  (cost=0.43..1.55 rows=1 width=14) (never executed)             |
+                          Index Cond: ((profession_id = p.profession_id) AND (nconst = (p2.nconst)::text))                                                   |
+                          Heap Fetches: 0                                                                                                                    |
+        ->  Index Only Scan using crew_pkey on crew c  (cost=0.42..1394.79 rows=2 width=20) (never executed)                                                 |
+              Index Cond: (nconst = (pp.nconst)::text)                                                                                                       |
+              Heap Fetches: 0                                                                                                                                |
+  ->  Index Scan using tv_movie_pkey on tv_movie tm  (cost=0.42..0.45 rows=1 width=29) (never executed)                                                      |
+        Index Cond: ((tconst)::text = (c.tconst)::text)                                                                                                      |
+Planning:                                                                                                                                                    |
+  Buffers: shared hit=68 read=1                                                                                                                              |
+Planning Time: 1.903 ms                                                                                                                                      |
+Execution Time: 0.128 ms                                                                                                                                     |

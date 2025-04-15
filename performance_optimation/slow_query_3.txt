@@ -1,0 +1,32 @@
+QUERY PLAN                                                                                                                                                                           |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+Nested Loop  (cost=1.83..5176.73 rows=1 width=33) (actual time=616.616..616.619 rows=0 loops=1)                                                                                      |
+  Buffers: shared hit=433105                                                                                                                                                         |
+  ->  Nested Loop  (cost=1.42..5176.28 rows=1 width=24) (actual time=616.616..616.618 rows=0 loops=1)                                                                                |
+        Join Filter: ((p2.nconst)::text = (c.nconst)::text)                                                                                                                          |
+        Buffers: shared hit=433105                                                                                                                                                   |
+        ->  Nested Loop  (cost=1.00..3781.47 rows=1 width=34) (actual time=616.615..616.617 rows=0 loops=1)                                                                          |
+              Buffers: shared hit=433105                                                                                                                                             |
+              ->  Nested Loop  (cost=0.57..847.95 rows=6496 width=10) (actual time=0.024..28.402 rows=108171 loops=1)                                                                |
+                    Buffers: shared hit=421                                                                                                                                          |
+                    ->  Index Scan using profession_profession_name_key on profession p  (cost=0.14..2.36 rows=1 width=4) (actual time=0.009..0.011 rows=1 loops=1)                  |
+                          Index Cond: ((profession_name)::text = 'director'::text)                                                                                                   |
+                          Buffers: shared hit=2                                                                                                                                      |
+                    ->  Index Only Scan using profession_people_pkey on profession_people pp  (cost=0.43..579.86 rows=26573 width=14) (actual time=0.012..16.128 rows=108171 loops=1)|
+                          Index Cond: (profession_id = p.profession_id)                                                                                                              |
+                          Heap Fetches: 0                                                                                                                                            |
+                          Buffers: shared hit=419                                                                                                                                    |
+              ->  Index Scan using people_pkey on people p2  (cost=0.42..0.45 rows=1 width=24) (actual time=0.005..0.005 rows=0 loops=108171)                                        |
+                    Index Cond: ((nconst)::text = (pp.nconst)::text)                                                                                                                 |
+                    Filter: ((primaryname)::text = 'Jiabao'::text)                                                                                                                   |
+                    Rows Removed by Filter: 1                                                                                                                                        |
+                    Buffers: shared hit=432684                                                                                                                                       |
+        ->  Index Only Scan using crew_pkey on crew c  (cost=0.42..1394.79 rows=2 width=20) (never executed)                                                                         |
+              Index Cond: (nconst = (pp.nconst)::text)                                                                                                                               |
+              Heap Fetches: 0                                                                                                                                                        |
+  ->  Index Scan using tv_movie_pkey on tv_movie tm  (cost=0.42..0.45 rows=1 width=29) (never executed)                                                                              |
+        Index Cond: ((tconst)::text = (c.tconst)::text)                                                                                                                              |
+Planning:                                                                                                                                                                            |
+  Buffers: shared hit=58                                                                                                                                                             |
+Planning Time: 1.217 ms                                                                                                                                                              |
+Execution Time: 616.673 ms                                                                                                                                                           |

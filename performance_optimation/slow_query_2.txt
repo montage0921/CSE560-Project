@@ -1,0 +1,14 @@
+QUERY PLAN                                                                                                           |
+---------------------------------------------------------------------------------------------------------------------+
+Gather  (cost=1000.00..10198.98 rows=1 width=32) (actual time=33.459..37.610 rows=0 loops=1)                         |
+  Workers Planned: 1                                                                                                 |
+  Workers Launched: 1                                                                                                |
+  Buffers: shared hit=4523                                                                                           |
+  ->  Parallel Seq Scan on people p  (cost=0.00..9198.88 rows=1 width=32) (actual time=30.819..30.819 rows=0 loops=2)|
+        Filter: ((primaryname)::text = 'Jiabao'::text)                                                               |
+        Rows Removed by Filter: 317960                                                                               |
+        Buffers: shared hit=4523                                                                                     |
+Planning:                                                                                                            |
+  Buffers: shared hit=6 dirtied=1                                                                                    |
+Planning Time: 0.111 ms                                                                                              |
+Execution Time: 37.638 ms                                                                                            |
