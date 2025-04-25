@@ -1,9 +1,0 @@
-QUERY PLAN                                                                                                        |
-------------------------------------------------------------------------------------------------------------------+
-Index Scan using idx_name on people p  (cost=0.42..2.64 rows=1 width=32) (actual time=0.024..0.024 rows=0 loops=1)|
-  Index Cond: ((primaryname)::text = 'Jiabao'::text)                                                              |
-  Buffers: shared read=3                                                                                          |
-Planning:                                                                                                         |
-  Buffers: shared hit=16 read=1                                                                                   |
-Planning Time: 0.194 ms                                                                                           |
-Execution Time: 0.045 ms                                                                                          |
