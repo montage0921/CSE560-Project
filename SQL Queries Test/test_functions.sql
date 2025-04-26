@@ -73,7 +73,7 @@ END;
 $$ LANGUAGE plpgsql;
 
 
--- Function to find actors/actress by genere 
+
 
 
 

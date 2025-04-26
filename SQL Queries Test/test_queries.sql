@@ -8,14 +8,14 @@ VALUES ('nm10025009','Yiwen Zhu', 1993, NULL)
 
 -- Deletion --
 DELETE FROM tv_movie
-WHERE tconst = 'tt34956443'
+WHERE tconst = 'tt0111161'
 
 DELETE FROM episode
 WHERE tconst = 'tt0612823'
 
 -- Update --
 UPDATE title_aliases
-SET "language" = 'cn'
+SET "title" = '克隆戰爭'
 WHERE titleId = 'tt0361243' and "ordering" = 35
 
 
@@ -84,8 +84,29 @@ NATURAL JOIN genres_movie gm
 NATURAL JOIN genres g
 GROUP BY p.primaryname;
 
--- TO DO --
--- Find Number of Epsiode of TV series with Ratings
+ -- Find Movie/TV Statistics Based On Genre }
+ SELECT g.genre, COUNT(*) AS movie_count, ROUND(AVG(r.averagerating)::numeric, 1)  as avg_ratings, ROUND(AVG(r.numvotes )::numeric) as avg_viewer
+FROM tv_movie tm
+NATURAL JOIN genres_movie gm
+NATURAL JOIN genres g
+natural join ratings r 
+GROUP BY g.genre
+ORDER BY movie_count DESC
+
+
+-- Popularity of Work Over Time
+SELECT 
+  g.genre,
+  (startyear / 10) * 10 AS decade,
+  ROUND(AVG(r.averagerating )::numeric, 1) AS avg_rating,
+  ROUND(AVG(r.numvotes)::numeric) AS avg_view_count
+FROM tv_movie tm
+NATURAL JOIN genres_movie gm
+NATURAL JOIN genres g
+NATURAL JOIN ratings r
+WHERE startyear IS NOT NULL AND startyear >= 1900
+GROUP BY g.genre, decade
+ORDER BY decade, g.genre;
 
 
 
