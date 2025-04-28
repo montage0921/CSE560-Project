@@ -56,8 +56,25 @@ This contains logic for Task 6 which asks for a simple transcation with Failure 
 
 The database is created using this file.
 
+> README.md
+
+A detailed description of the repository
+
+> .gitignore
+> Due to size limitation, original tsv and power BI files are ignored.
+
+> demo.mp4
+> The demonstration video of our database project.
+
 ---
 
 ## Power BI Visualization
 
 https://app.powerbi.com/view?r=eyJrIjoiMTBkZjg1NmMtNDVhNy00YTFkLTk4NTctMzRmNTdhZWRhYmYzIiwidCI6Ijk2NDY0YThhLWY4ZWQtNDBiMS05OWUyLTVmNmI1MGEyMDI1MCIsImMiOjN9
+
+---
+
+## Source of Original Dataset
+
+IMDb Non-Commercial Datasets
+https://developer.imdb.com/non-commercial-datasets/
