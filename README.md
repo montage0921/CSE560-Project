@@ -10,4 +10,4 @@ This project presents a powerful movie/TV database, including its structure, det
 
 ## Directory Structure
 
-![Alt text](image.png)
+![Alt text](directory_structure.png)
