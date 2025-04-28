@@ -10,7 +10,34 @@ This project presents a powerful movie/TV database, including its structure, det
 
 ## Directory Structure
 
-![Alt text](directory_structure.png)
+```
+.
+├── Data Processing/
+│   ├── Data Sampling/
+│   │   └── data_sampling.ipynb
+│   └── Data Upload/
+│       ├── aliases_process.ipynb
+│       ├── basic_process.ipynb
+│       ├── episode_basic_process.ipynb
+│       ├── episode_process.ipynb
+│       ├── people_process.ipynb
+│       ├── principal_process.ipynb
+│       └── rating_process.ipynb
+├── Performance Optimizazation/
+│   ├── Execution Plan/
+│   ├── performance.sql
+│   └── time-cost.md
+├── SQL Queries Test/
+│   ├── test_functions.sql
+│   ├── test_queries.sql
+│   └── Screenshots/
+├── Transaction and Triggers/
+│   └── transacation.sql
+├── .gitignore
+├── README.md
+├── relation_create.sql
+├── demo.mp4
+```
 
 > Data Processing
 
