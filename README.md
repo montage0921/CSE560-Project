@@ -58,4 +58,6 @@ The database is created using this file.
 
 ---
 
-Power BI Visualization
+## Power BI Visualization
+
+https://app.powerbi.com/view?r=eyJrIjoiMTBkZjg1NmMtNDVhNy00YTFkLTk4NTctMzRmNTdhZWRhYmYzIiwidCI6Ijk2NDY0YThhLWY4ZWQtNDBiMS05OWUyLTVmNmI1MGEyMDI1MCIsImMiOjN9
